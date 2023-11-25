@@ -1,12 +1,11 @@
-import express, { Express, Request, Response } from "express";
+import express, { Express } from "express";
+import router from "./router";
 const port = 3000;
 
 const app: Express = express();
 
-app.get("/", (req: Request, res: Response) => {
-  res.send("HELLO FROM EXPRESS + TS!!!!");
+app.listen(port, () => {
+  console.log(`Server running on http://localhost:${port}/`);
 });
 
-app.listen(port, () => {
-  console.log(`now listening on port ${port}`);
-});
+app.use('/', router());
