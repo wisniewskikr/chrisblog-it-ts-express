@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
 
-export const getPageNotFound = (req: Request, res: Response): void => {
-    res.send("Page Not Found").status(404);
+export const getResourceNotFound = (req: Request, res: Response): void => {
+    res.send("Resource Not Found").status(404);
 };

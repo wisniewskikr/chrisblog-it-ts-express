@@ -9,7 +9,11 @@ Usage steps:
 1. In a command line tool install nmp packages with `npm install`
 1. In a command line tool start application with `npm start`
 1. In a http client (e.g. Postman) use **GET** method and visit `http://localhost:3000`
-   * Expected **Hello World** message
+   * Expected message **Hello World Index**
+1. In a http client (e.g. Postman) use **GET** method and visit `http://localhost:3000/helloworld`
+   * Expected message **Hello World Message**
+1. In a http client (e.g. Postman) use **GET** method and visit `http://localhost:3000/tmp`
+   * Expected message **Resource Not Found**
 1. Clean up environment 
      * In a command line tool stop application with `ctrl + C`
 
@@ -19,12 +23,16 @@ USAGE IMAGES
 
 ![My Image](readme-images/image-01.png)
 
+![My Image](readme-images/image-02.png)
+
+![My Image](readme-images/image-03.png)
+
 
 DESCRIPTION
 -----------
 
 ##### Goal
-The goal of this project is to present how to create an application type **API REST** in **TypeScript** programming language with usage **express** framework. This application consists of **single** API endpoint and displays **Hello World** message.
+The goal of this project is to present how to create an application type **API REST** in **TypeScript** programming language with usage **express** framework. This application consists of **multiple** API endpoints: endpoint **index** and endpoint **helloworld**.
 
 ##### Terminology
 Terminology explanation:
