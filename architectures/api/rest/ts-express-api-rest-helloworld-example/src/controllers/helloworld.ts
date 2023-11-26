@@ -5,5 +5,8 @@ export const handleIndex = (req: Request, res: Response): void => {
 };
 
 export const handleName = (req: Request, res: Response): void => {
-    res.send("Hello World Message");
+    const name = req.params.name;
+    const method = req.method.toLocaleLowerCase();
+    const message = 'Hello World ' + name + '. Used HTTP method: ' + method + '. Content type: plain'; 
+    res.send(message);
 };
