@@ -5,8 +5,19 @@ export const handleIndex = (req: Request, res: Response): void => {
 };
 
 export const handleName = (req: Request, res: Response): void => {
+    
     const name = req.params.name;
     const method = req.method.toLocaleLowerCase();
-    const message = 'Hello World ' + name + '. Used HTTP method: ' + method + '. Content type: plain'; 
-    res.send(message);
+    const contentType = req.query.contentType;
+
+    let content;
+    if (contentType == 'json') {
+        const message = 'Hello World ' + name + '. Used HTTP method: ' + method + '. Content type: json';
+        content = `{message: '${message}'}`;
+        res.json(content);
+    } else {
+        content = 'Hello World ' + name + '. Used HTTP method: ' + method + '. Content type: plain'; 
+        res.send(content);
+    }
+
 };
