@@ -32,3 +32,8 @@ export const handleCreate = (req: Request, res: Response): void => {
     create(text);
     res.json("New Message was added");
 };
+
+export const handleUpdate = (req: Request, res: Response): void => {
+    update(req.body)
+    res.json("Message was updated");
+};
