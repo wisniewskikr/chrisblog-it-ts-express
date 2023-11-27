@@ -37,3 +37,23 @@ export const handleUpdate = (req: Request, res: Response): void => {
     update(req.body)
     res.json("Message was updated");
 };
+
+export const handleDelete = (req: Request, res: Response): void => {
+    
+    const id = Number(req.params.id);
+    if (isNaN(id)) {
+        res.json("Specific ID Not Found").status(400);
+        return;
+    }
+
+    const message: Message = readById(id);
+    if (message == null) {
+        res.json("Specific Message Not Found").status(400);
+        return;
+    }
+
+    del(id);
+    
+    res.json("Message was deleted")
+
+};
