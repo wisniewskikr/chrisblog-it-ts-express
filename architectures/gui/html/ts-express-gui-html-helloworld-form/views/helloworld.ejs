@@ -11,16 +11,24 @@
     <div>
         <img src="/images/helloworld.jpg" alt="Hello World"/>
     </div>
-    <div>
-        <label for="name">Name:</label>
-        <input type="text" id="name"/>
-    </div>
+    <form method="POST">
+        <div>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name"/>
+        </div>
+    </form>
+    <% if (name) { %>
     <div id="message">
-        <span id="message-text"/>
-    </div>    
+        <span id="message-text">Hello World <%= name %>!</span>
+    </div>
+    <% } %>    
     <div>
-        <a id="create-link" href="#">Create</a>
-        <a id="back-link" href="#" hidden>Back</a>
+        <% if (name) { %>
+            <a id="back-link" href="/">Back</a>
+        <% } else { %> 
+            <a id="create-link" href="#">Create</a>
+        <% } %> 
+        
     </div>
 </body>
 </html>
