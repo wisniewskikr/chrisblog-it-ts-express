@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Message</title> 
+    <script src="/js/view.js" defer></script>   
+</head>
+<body>
+    <h4>View Message</h4>
+    <table>
+        <tr>
+            <td><label for="id">Message Id</label></td>
+            <td><input type="text" id="id" value="<%= message.id %>" disabled/></td>
+        </tr>
+        <tr>
+            <td><label for="text">Message Text</label></td>
+            <td><input type="text" id="text" value="<%= message.text %>" disabled/></td>
+        </tr>
+    </table>
+
+    <div>
+        <a href="/">Back</a>
+    </div>
+</body>
+</html>
