@@ -6,7 +6,7 @@ import { Request, Response } from "express";
 import { readAll, readById, create, update, del } from "../services/crud";
 
 export const handleReadAll = (req: Request, res: Response): void => {
-    res.json(readAll)
+    res.json(readAll())
 };
 
 export const handleReadById = (req: Request, res: Response): void => {
