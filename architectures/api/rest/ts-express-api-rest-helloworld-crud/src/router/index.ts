@@ -1,12 +1,11 @@
-import { handleIndex, handleName } from "../controllers/helloworld";
+import { handleReadAll } from "../controllers/helloworld";
 import { getResourceNotFound } from "../controllers/error";
 import express, { Router } from "express";
 
 const router = express.Router();
 
 export default (): Router => {
-  router.get('/', handleIndex);
-  router.get('/name/:name', handleName);
+  router.get('/api/v1/messages', handleReadAll);
   router.get('*', getResourceNotFound);
   return router;
 };
