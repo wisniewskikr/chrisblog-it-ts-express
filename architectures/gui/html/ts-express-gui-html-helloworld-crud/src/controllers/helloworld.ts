@@ -62,3 +62,36 @@ export const handleUpdateSubmit = (req: Request, res: Response): void => {
     update(req.body);
     res.redirect('/');
 };
+
+export const handleDeleteDisplay = (req: Request, res: Response): void => {
+    
+    const messageId = Number(req.query.id);
+    if (isNaN(messageId)) {
+        res.render('404');
+        return;
+    }
+
+    const message = readById(messageId);
+    if (message == null) {
+        res.render('404');
+        return;
+    }
+
+    res.locals.message = message;
+
+    res.render('delete');
+
+};
+
+export const handleDeleteSubmit = (req: Request, res: Response): void => {
+    
+    const messageId = Number(req.body.id);
+    if (isNaN(messageId)) {
+        res.render('404');
+        return;
+    }
+
+    del(messageId);
+    res.redirect('/');
+
+};
