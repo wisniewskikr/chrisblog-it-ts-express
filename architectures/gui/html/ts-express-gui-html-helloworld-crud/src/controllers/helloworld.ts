@@ -37,3 +37,28 @@ export const handleCreateSubmit = (req: Request, res: Response): void => {
     create(req.body.text);
     res.redirect('/');
 };
+
+export const handleUpdateDisplay = (req: Request, res: Response): void => {
+    
+    const messageId = Number(req.query.id);
+    if (isNaN(messageId)) {
+        res.render('404');
+        return;
+    }
+
+    const message = readById(messageId);
+    if (message == null) {
+        res.render('404');
+        return;
+    }
+
+    res.locals.message = message;
+
+    res.render('update');
+
+};
+
+export const handleUpdateSubmit = (req: Request, res: Response): void => {
+    update(req.body);
+    res.redirect('/');
+};
