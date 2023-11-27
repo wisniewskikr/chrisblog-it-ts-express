@@ -8,4 +8,6 @@ app.listen(port, () => {
   console.log(`Server running on http://localhost:${port}/`);
 });
 
+app.use(express.static('static'));
+app.set('view engine', 'ejs');
 app.use('/', router());
