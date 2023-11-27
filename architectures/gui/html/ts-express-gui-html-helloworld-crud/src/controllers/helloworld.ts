@@ -28,3 +28,12 @@ export const handleView = (req: Request, res: Response): void => {
     res.render('view');
 
 };
+
+export const handleCreateDisplay = (req: Request, res: Response): void => {
+    res.render('create');
+};
+
+export const handleCreateSubmit = (req: Request, res: Response): void => {
+    create(req.body.text);
+    res.redirect('/');
+};
