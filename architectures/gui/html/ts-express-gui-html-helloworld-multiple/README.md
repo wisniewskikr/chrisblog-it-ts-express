@@ -9,7 +9,11 @@ Usage steps:
 1. In a command line tool install nmp packages with `npm install`
 1. In a command line tool start application with `npm start`
 1. In a http browser (e.g. Chrome) visit `http://localhost:3000`
+   * Expected **Init** page
+1. In a http browser (e.g. Chrome) on **Init** page click **here** link
    * Expected **Hello World** page
+1. In a http browser (e.g. Chrome) on **Hello World** page click **Back** link
+   * Expected **Init** page
 1. Clean up environment 
      * In a command line tool stop application with `ctrl + C`
 
@@ -19,12 +23,16 @@ USAGE IMAGES
 
 ![My Image](readme-images/image-01.png)
 
+![My Image](readme-images/image-02.png)
+
+![My Image](readme-images/image-03.png)
+
 
 DESCRIPTION
 -----------
 
 ##### Goal
-The goal of this project is to present how to create an application type **GUI HTML** in **TypeScript** programming language with usage **express** framework and **ejs** template engine. This application consists of **single** HTTP page and displays **Hello World** message.
+The goal of this project is to present how to create an application type **GUI HTML** in **TypeScript** programming language with usage **express** framework and **ejs** template engine. This application consists of **multiple** HTML pages: first page **Init** contains link to second page and second page **Hello World** displays message.
 
 ##### Terminology
 Terminology explanation:
@@ -35,8 +43,10 @@ Terminology explanation:
 
 ##### Flow
 The following flow takes place in this project:
-1. User via any html browser sends request to application for the content.
-1. Application sends back response to user via html browser with message
+1. User via html browser sends request to application for Init page.
+1. Application sends back response to user via html browser with Init page.
+1. User via html browser sends request to application for Hello World page.
+1. Application sends back response to user via html browser with Hello World page.
 
 ##### Launch
 To launch this application please make sure that the **Preconditions** are met and then follow instructions from **Usage** section.
