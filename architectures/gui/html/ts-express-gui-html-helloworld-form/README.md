@@ -30,7 +30,7 @@ DESCRIPTION
 -----------
 
 ##### Goal
-The goal of this project is to present how to create an **example** application type **GUI HTML** in **TypeScript** programming language with usage **express** framework and **ejs** template engine. This application consists of HTML page which includes following frontend elements: **html**, **javascript**, **css** and **images**.
+The goal of this project is to present how to create an **form** application type **GUI HTML** in **TypeScript** programming language with usage **express** framework and **ejs** template engine. Form application means that HTML page contains form which is sent to server. This application consists of HTML page which includes following frontend elements: **html**, **javascript**, **css** and **images**.
 
 ##### Terminology
 Terminology explanation:
